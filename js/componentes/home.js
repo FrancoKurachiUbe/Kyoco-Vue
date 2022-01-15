@@ -6,7 +6,6 @@ Vue.component("home", {
             titulo2:"Nuestros Productos",
             titulo3:"REUTILIZÁ",
             subtitulo3:"Tips para una limpieza perfecta:",
-
         }
     },
     template: 

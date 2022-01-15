@@ -1,14 +1,7 @@
 Vue.component('contacto', {
-	/* data:function(){
-		return {
-            
-        }
-    }, */
-
 	template:
     `
-    <secti
-    on class="container border my-5 row mx-auto">
+    <section class="container border my-5 row mx-auto">
     <h1>Contacto</h1>
     <div class="container contacto">
             <form>

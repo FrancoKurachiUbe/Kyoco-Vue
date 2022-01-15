@@ -4,6 +4,7 @@ const productos = {template: `<productos></productos>`, name:"componente2"
 };
 const contacto = {template: `<contacto></contacto>`, name: "componente3"};
 const formulario = {template: `<form-productos> </form-productos>`,name:"componente4"};
+const carrito = {template: `<carrito> </carrito>`,name:"componente6"};
 const lista = {template: `<mostrar-lista></mostrar-lista>`, name:"componente5", 
 };
 
