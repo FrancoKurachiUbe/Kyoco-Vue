@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/estilo.css">
+        <link rel="icon" href="img/Kyoco-title.png" type="image/png">
+        <script src="js/vue.js"></script>
+        <title></title>
+        <style>
+            /* .rojo { color: red;            
+            }
+            .derecha {
+                text-align: right;
+            } */
+        </style>
+    </head>
+<body>
+<div id="contenedor">
+    <header class="fondo ">
+        <div class="container-fluid border bg-light text-right">
+            <p class="d-inline ">Admin:</p>
+            <ul class="d-inline">
+                <li class=" d-inline ml-2 derecha">
+                    <router-link to="/formulario">Cargar producto</router-link>
+                </li>
+                <li class=" d-inline ml-2">
+                    <span>|</span>
+                </li>
+                <li class="d-inline ml-1">
+                    <router-link to="/lista">Lista de Productos</router-link>
+                </li>
+            </ul>
+        </div>
+        <div class="row">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <div class="container-fluid">
+                  <router-link to="/" class=" d-flex justify-content-center logo-head"><span class="visually-hidden">Kyoco</span></router-link>
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                      <router-link class="nav-link text-light h5" to="/">Home</router-link>
+                      <router-link class="nav-link text-light h5" to="/productos">Productos</router-link>
+                      <router-link class="nav-link text-light h5" to="/contacto">Contacto</router-link>
+                    </div>
+                    <div id="minicarrito" class="">
+                        <!-- <p class="text-light h5">0
+                        </p>
+                        <p class="text-light ">$0</p> -->
+                        <button id="botton"></button>
+                    </div>
+                  </div>
+                </div>
+              </nav>
+        </div>
+    </header>
+    <main>
+        <picture>
+            <source media="(max-width: 800px)" srcset="img/Banner_productos_mobile2.jpg" type="">
+            <source media="(max-width: 1000px)" srcset="img/Banner_productos_mobile.jpg" type="">
+            <img src="img/Banner_productos.jpg" alt="Vela sobre una mesa">
+        </picture>
+        <transition name="fade" mode="out-in">
+            <router-view></router-view>
+        </transition>
+    </main>
+</div>
+<footer class="pb-1 pt-1">
+    <div class=" container pl-4">
+        <div class="foot mt-4" >
+            <a  class="logo-footer " href="index.html"><span class="visually-hidden">Kyoco</span></a>  
+        </div>
+        
+        <div class="mt-4 row">
+            <div class="col-sm-6 col-md-5">
+                <ul class="redes  mb-4">    
+                    <li><a href="#" class="face"><span class="visually-hidden">Facebook</span></a></li>
+                    <li><a href="#" class="insta"><span class="visually-hidden">Instagram</span></a></li>
+                    <li><a href="#" class="youtube"><span class="visually-hidden">Youtube</span></a></li>
+                </ul>
+            </div>
+                
+            <div class="col-sm-6 col-md-7 m-auto">
+                <ul class="info">
+                    <li><a href="" class="gmail"></a>info@kyoco.com</li>
+                    <li class="mt-4"><a href="#" class="mapa"></a>Buenos Aires, Argentina</li>
+                </ul>
+            </div>
+        </div>
+        <p class="text-light mt-2">Copyright©Franco Kurachi Ubé</p>
+    </div>
+</footer>
+    
+    <!-- <script src="css/bootstrap/jquery-3.5.1.js"></script> -->
+    <script src="css/bootstrap/js/bootstrap.bundle.js"></script>
+    
+     <!-- <script>
+        $('.nav-item').on('click', function(){
+            $(".navbar-collapse").collapse("hide");
+        })
+    </script> -->
+    <script src="js/componentes/home.js"></script>
+    <script src="js/componentes/productos.js"></script>
+    <script src="js/componentes/contacto.js"></script>
+    <script src="js/componentes/form-productos.js"></script>
+    <script src="js/componentes/mostrar-lista.js"></script>
+    <script src="js/router/vue-router.js"></script>
+    <script src="js/router/rutas.js"></script>
+</body>
+</html>
