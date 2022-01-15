@@ -24,12 +24,6 @@ a {
     list-style:none;
 }
 
-/*Home*/
-.sombra {
-    box-shadow: 3px 3px 10px black, -3px -3px 10px black;
-    border-radius: 20px;
-}
-
 /*
 ---------------------------------------------------------------------------------------------------------------------
     -    -    -    -    -    -    -    -    -    -header-    -    -    -    -    -    -    -    -    -    -    -
@@ -44,8 +38,6 @@ a {
 header {    background: #BF7128;
 }
 
-
-
 h1 {    font-size: 4em;
         width: 100%;
         color: black;
@@ -59,30 +51,48 @@ h1 {    font-size: 4em;
 
 #minicarrito {
     width: 98%;
-    margin: auto;
-    text-align: right;
-    padding-right: 2em;
     border-radius: 10px;
-    padding: 5px;
 }
 
-#minicarrito p {
+#minicarrito div {
     background-color: #996633;
+    border-radius: 10px;
+    max-width: 220px;
+    display: flex;
+    align-items: center;
+    padding: .6em;
+}
+
+.unidad {
+    /* background-color: black; */
+    background: #BF7128;
+    color: white;
     width: 40px;
     height: 40px;
-    padding-top:5px ;
+    padding: 5px;
     border-radius:20px;
-    margin-right: .5em;
-    display:inline-block;
     text-align: center;
+    display: inline-block;
 }
-
-#botton {   background: url(../img/icons/Carrito.png) center center no-repeat ;
-            border: white 2px solid;
-            border-radius: 10px;
-            width: 50px;
-            height: 40px;
-            vertical-align: middle;
+.precio {
+    background: #BF7128;
+    color: white;
+    height: 40px;
+    /* width: 80px; */
+    text-align: center;
+    padding: .5em;
+    border-radius:10px;
+    margin-right: .8em;
+    margin-left: .8em;
+}
+#carrito {
+    background-image: url("../img/icons/Carrito.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-color: #BF7128;
+    border-radius: 10px;
+    width: 50px;
+    height: 40px;
 }
 
 /* ---------------------------------------------------------------------------------------------------------------------
@@ -103,7 +113,7 @@ h1 {    font-size: 4em;
 .resumen div p {    font-size: 1.5em;
 }
 
-section {   display: flex;
+#cards/* section */ {   display: flex;
             flex-direction: row;
             justify-content: center;
             flex-wrap: wrap;
@@ -116,11 +126,11 @@ section {   display: flex;
 }
 
 .cards {    border-radius: 20px;
-            box-shadow: 3px 3px 10px black, -3px -3px 10px black;
+            /* box-shadow: 3px 3px 10px black, -3px -3px 10px black; */
             margin: 1em;
             padding-bottom: 1.5em;
             text-align: center;
-            align-items: center;
+            /* align-cards: center; */
             display: flex;
             width: 320px;
             flex-wrap: wrap;
@@ -135,7 +145,15 @@ section {   display: flex;
 .cards-detalle h2 { margin-top: .5em;
 
 }
-
+/* .cards-detalle a  {
+                margin-left: .5em;
+} */
+/* .dere {
+    margin-left: .5em;
+} */
+button:last-child {
+    margin-left: .5em;
+}
 .cards p {  text-align: right;
             margin-right: 10%;
             font-size: 1.2em;
@@ -144,32 +162,38 @@ section {   display: flex;
 .cards p span {     font-weight: bold;
 }
 
-.butt {     /* width: 45%; */
+/* .butt {     
             width: 150px;
             height: 3em;
             border-radius: 10px;
             vertical-align: top;
-}
+} */
 
-.agregar:hover {    background-color: #cccccc;
+/* .agregar:hover {    background-color: #cccccc;
 }
 
 .ampliar {      background-color: black;
                 color: white;
 }
-.ampliar2 {     padding-top: .7em; /* centra todos los ampliar con su boton */
+.ampliar2 {     padding-top: .7em; 
 }
 
 .ampliar:hover {    background-color: #333333;
                     color: white;
-}
+} */
 
 /*
 ---------------------------------------------------------------------------------------------------------------------
     -    -    -    -    -    -    -    -    -    -Ampliar-Producto-    -    -    -    -    -    -    -    -    -    
 ---------------------------------------------------------------------------------------------------------------------
 */
-.card_detalle {
+/* .card_detalle {
+    border-radius: 20px;
+    box-shadow: 3px 3px 10px black, -3px -3px 10px black;
+    margin: auto;
+    margin-top: 3em;
+} */
+.card_ampliado {
     border-radius: 20px;
     box-shadow: 3px 3px 10px black, -3px -3px 10px black;
     margin: auto;
@@ -188,7 +212,7 @@ Esto se utiliza en js para hacer con el boton-ampliar la amplicacion del product
 
 .modal-agregar {    position: fixed; z-index: 1;
                     display: flex; flex-direction: column;
-                    justify-content: center; align-items: center;
+                    justify-content: center; align-cards: center;
                     top: 0;
                     left: 0;
                     bottom: 0;
@@ -201,7 +225,7 @@ Esto se utiliza en js para hacer con el boton-ampliar la amplicacion del product
                         display: flex;
                         flex-direction: column;
                         justify-content: center;
-                        align-items: center;
+                        align-cards: center;
                         top: 1em;
                         right: 1em;
                         border: white 1px solid;
@@ -243,7 +267,7 @@ Esto se utiliza en js para hacer con el boton-ampliar la amplicacion del product
 }
 
 .cont-modal > .butt {   margin: auto;
-                        align-items: center;
+                        align-cards: center;
                         justify-content: center;
 }
 
@@ -253,8 +277,8 @@ Esto se utiliza en js para hacer con el boton-ampliar la amplicacion del product
 ---------------------------------------------------------------------------------------------------------------------
 */
 .contacto {     border: solid gray 1px;
-    border-radius: 5px;
-    padding: 1em;
+                border-radius: 5px;
+                padding: 1em;
 }
 /*
 ---------------------------------------------------------------------------------------------------------------------
@@ -340,12 +364,12 @@ footer div p {      text-align: center;
     -    -    -    -    -    -    -    -    -    -Detalle de Producto-    -    -    -    -    -    -    -    -    -  
 ---------------------------------------------------------------------------------------------------------------------
 */
-    .card_detalle {
+    .card_ampliado {
                     max-width: 500px;
                     border-top-left-radius:20px ;
                     border-top-right-radius:20px ;
     }
-    .card_detalle img {
+    .card_ampliado img {
         border-top-left-radius:20px ;
         border-top-right-radius:20px ;
     }
@@ -366,12 +390,12 @@ footer div p {      text-align: center;
     -    -    -    -    -    -    -    -    -    -Detalle de Producto-    -    -    -    -    -    -    -    -    - 
 ---------------------------------------------------------------------------------------------------------------------
 */
-    .card_detalle {
+    .card_ampliado {
         display: flex;
         max-width: 760px;
     }
 
-    .card_detalle img {
+    .card_ampliado img {
         max-width: 400px; /* achica las imagenes a 400px */
         border-top-left-radius: 20px;
         border-bottom-left-radius: 20px;

@@ -1,28 +1,9 @@
 Vue.component('contacto', {
-	data:function(){
+	/* data:function(){
 		return {
-            /* dato:{
-                nombre:null, 
-                descripcion:null,
-                imagen:null, 
-                precio:null,
-                descrImg:null,
-                
-            },
-            arr:[],
-            errNom:[],
-            errDes:[],
-            errImg:[],
-            errPrecio:[],
-            errDesImg:[],
-            enviar:false, */
-            /* titulo1:"Sobre Kyoco",
-            titulo2:"Nuestros Productos",
-            titulo3:"REUTILIZÁ",
-            subtitulo3:"Tips para una limpieza perfecta:", */
             
         }
-    },
+    }, */
 
 	template:
     `
