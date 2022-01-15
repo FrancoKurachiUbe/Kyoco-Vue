@@ -1,5 +1,5 @@
-Vue.component("carrito"), {
-    data:function(){
+Vue.component("carrito", {
+    /* data:function(){
 		return {
             dato:{
                 nombre:null, 
@@ -18,7 +18,7 @@ Vue.component("carrito"), {
             enviar:false,
             
         }
-    },
+    }, */
     template:
     `
     <section id="section-2">
@@ -49,4 +49,4 @@ Vue.component("carrito"), {
         </div> 
     </section>
     `
-}
+})

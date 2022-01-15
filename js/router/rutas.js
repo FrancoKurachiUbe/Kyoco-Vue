@@ -4,9 +4,8 @@ const productos = {template: `<productos></productos>`, name:"componente2"
 };
 const contacto = {template: `<contacto></contacto>`, name: "componente3"};
 const formulario = {template: `<form-productos> </form-productos>`,name:"componente4"};
+const lista = {template: `<mostrar-lista></mostrar-lista>`, name:"componente5",};
 const carrito = {template: `<carrito> </carrito>`,name:"componente6"};
-const lista = {template: `<mostrar-lista></mostrar-lista>`, name:"componente5", 
-};
 
 const routes = [
   { path: '/', component: home, name:'home', meta: {auth: false, title:'Kyoco | Home'} },
@@ -14,6 +13,7 @@ const routes = [
   { path: '/contacto', component: contacto, name: 'contacto', meta: {auth:false, title: 'Kyoco | Contacto'}},
   { path: '/formulario', component: formulario, name: 'formulario', meta: {auth:false, title: 'Kyoco | Cargar Producto'}},
   { path: '/lista', component: lista, name:'lista', meta: {auth: false, title: 'Kyoco | Lista Productos'} },
+  { path: '/carrito', component: carrito, name:'carrito', meta: {auth: false, title: 'Kyoco | carrito'} },
 
 ];
 
