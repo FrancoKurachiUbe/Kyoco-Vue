@@ -1,14 +1,17 @@
+/* 
+https://es.vuejs.org/v2/cookbook/client-side-storage.html
+*/
 Vue.component("carrito", {
     data:function(){
 		return {
-            carrito:[],
+            local:[],
             sin_datos: "",
             item:"",
         }
     },
     template:
     `
-    <section id="section-2">
+    <section>
         <div class="container">
             <h1 class="h1 mt-4">Carrito de Compras</h1>
             <table class="table text-center">
@@ -26,14 +29,9 @@ Vue.component("carrito", {
                     </tr>
                 </thead>
                 <tbody id="items">
-                    <tr  v-for="(item, id) in carrito" class="border">
-                        <td>{{id}}</td>
-                        <td><img :src="item.imagen" :alt="item.descrImg" class="table-img" /></td>
-                        <td class="font-weight-bold">{{item.nombre}}</td>
-                        <td>{{item.descripcion}}</td>
-                        <td>cantidad</td>
-                        <td>$ {{item.precio}}</td>
-                        <td><button @click="borrar(item)" class="btn bg-danger text-light">X</button></td>
+                    <tr  v-for="(item, id) in local" class="border">
+                        <td>{{item.precio}}</td>
+                        
                     </tr>
                 </tbody>
                 <tfoot class="borde-BF">
@@ -53,11 +51,19 @@ Vue.component("carrito", {
         ver_local:function(){
             if(localStorage.item){
                 var dame=JSON.parse(localStorage.getItem("item"))
-                this.carrito = dame
-                console.log (this.carrito)
-            }/* else{
+                this.local = dame
+                console.log (this.local)
+            }else{
                 this.sin_datos = "No Hay Datos"
-            } */
+            }
         }
     }
 })
+/* 
+<td><img :src="item.imagen" :alt="item.descrImg" class="table-img" /></td>
+                        <td class="font-weight-bold">{{item.nombre}}</td>
+                        <td>{{item.descripcion}}</td>
+                        <td>cantidad</td>
+                        <td>$ {{item.precio}}</td>
+                        <td><button @click="borrar(item)" class="btn bg-danger text-light">X</button></td>
+*/

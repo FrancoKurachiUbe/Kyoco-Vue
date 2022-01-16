@@ -8,7 +8,7 @@ Vue.component("productos", {
                 precio:null,
             },
         
-        arr:[]
+        /* arr:[] */
         }
         
     },
@@ -90,7 +90,7 @@ Vue.component("productos", {
             <div class="cards-detalle">
                 <h2>{{item.nombre}}</h2>
                 <p>$ {{item.precio}}</p>
-                <button @click="guardar(item)" class="btn btn-primary btn-lg">Agregar</button>
+                <button v-model="guardar(item)" class="btn btn-primary btn-lg">Agregar</button>
                 <button class="btn btn-outline-dark btn-lg">Ampliar</button>
             </div>
             <div>
@@ -120,16 +120,14 @@ Vue.component("productos", {
 
             //Cuando pulsamos el boton agregar almacenamos la informacion del producto
             guardar:function(item){
-                //console.log(item)
-                let precio = item.precio
-                //console.log(precio)
-
+                console.log(item)
+                //console.log(item.precio)
+                console.log(JSON.parse(localStorage.getItem("item")))
                 if(!localStorage.item){
                     arr=[]
                 }else{
                     arr=JSON.parse(localStorage.getItem("item"))
                 }
-                //arr=JSON.parse(localStorage.getItem("item"))
                 arr.push(item)
                 console.log(arr)
                 localStorage.setItem("item",JSON.stringify(arr))
