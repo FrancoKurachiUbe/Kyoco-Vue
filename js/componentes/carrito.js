@@ -6,7 +6,6 @@ Vue.component("carrito", {
 		return {
             local:[],
             sin_datos: "",
-            item:"",
         }
     },
     template:
@@ -45,10 +44,10 @@ Vue.component("carrito", {
     </section>
     `,
     mouted:function(){
-        this.ver_local()
+        this.verLocal()
     },
     methods:{
-        ver_local:function(){
+        verLocal:function(){
             if(localStorage.item){
                 var dame=JSON.parse(localStorage.getItem("item"))
                 this.local = dame
@@ -56,14 +55,17 @@ Vue.component("carrito", {
             }else{
                 this.sin_datos = "No Hay Datos"
             }
+            console.log(localStorage.dato)
+            console.log(dame)
+            console.log(this.local)
         }
-    }
+    },
 })
 /* 
 <td><img :src="item.imagen" :alt="item.descrImg" class="table-img" /></td>
-                        <td class="font-weight-bold">{{item.nombre}}</td>
-                        <td>{{item.descripcion}}</td>
-                        <td>cantidad</td>
-                        <td>$ {{item.precio}}</td>
-                        <td><button @click="borrar(item)" class="btn bg-danger text-light">X</button></td>
+<td class="font-weight-bold">{{item.nombre}}</td>
+<td>{{item.descripcion}}</td>
+<td>cantidad</td>
+<td>$ {{item.precio}}</td>
+<td><button @click="borrar(item)" class="btn bg-danger text-light">X</button></td>
 */

@@ -2,13 +2,20 @@
 Vue.component("productos", {
     data:function(){
         return {
+            // Resive la informacion del admin
             local:[],
             sin_datos: "",
+            
+            //Capta la informacion del usuario
             item:{
+                nombre:null, 
+                descripcion:null,
+                imagen:null, 
                 precio:null,
+                descrImg:null,
             },
-        
-        /* arr:[] */
+            arr:[],
+            enviar:false,
         }
         
     },
@@ -86,11 +93,14 @@ Vue.component("productos", {
                 <img src="img/producto/StarsWills.jpg" alt="">
             </div>
         </article>
-        <article  v-for="item in local" class="cards shadow-lg">
+        <article  v-for="(item, id) in local" class="cards shadow-lg">
             <div class="cards-detalle">
                 <h2>{{item.nombre}}</h2>
-                <p>$ {{item.precio}}</p>
-                <button v-model="guardar(item)" class="btn btn-primary btn-lg">Agregar</button>
+                <p>$ <span>{{item.precio}}</span></p>
+                
+                <input type="text" v-model="item.precio" class="visually-hidden">
+                <button @click="guardar(item)" class="btn btn-primary btn-lg">Agregar</button>
+
                 <button class="btn btn-outline-dark btn-lg">Ampliar</button>
             </div>
             <div>
@@ -116,13 +126,12 @@ Vue.component("productos", {
                 this.sin_datos = "No hay datos que mostrar"
                 }
                 //console.log( this.$route)
-            },
 
-            //Cuando pulsamos el boton agregar almacenamos la informacion del producto
+                //Cuando pulsamos el boton agregar almacenamos la informacion del producto
+            },
             guardar:function(item){
+                //this.enviar = true;
                 console.log(item)
-                //console.log(item.precio)
-                console.log(JSON.parse(localStorage.getItem("item")))
                 if(!localStorage.item){
                     arr=[]
                 }else{
@@ -131,7 +140,6 @@ Vue.component("productos", {
                 arr.push(item)
                 console.log(arr)
                 localStorage.setItem("item",JSON.stringify(arr))
-
-            }
-    }
+            }  
+    },
 })

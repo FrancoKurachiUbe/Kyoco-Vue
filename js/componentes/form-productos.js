@@ -126,8 +126,6 @@ Vue.component('form-productos', {
                 arr.push(dato)
                 localStorage.setItem("dato",JSON.stringify(arr))
             }
-                //this.$router.push('/productos');
-
         }
     },
 });

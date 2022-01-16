@@ -81,7 +81,10 @@ Vue.component("mostrar-lista", {
                     this.local = dame
             } else{ this.sin_datos = "No hay datos que mostrar"
             }
-            console.log( this.$route)
+            console.log(localStorage.dato)
+            console.log(dame)
+            console.log(this.local)
+            //console.log( this.$route)
         },
         borrar:function(item){
             local= JSON.parse(localStorage.getItem ("dato"))
