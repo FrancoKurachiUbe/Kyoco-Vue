@@ -4,11 +4,16 @@ Vue.component("productos", {
         return {
             local:[],
             sin_datos: "",
+            item:{
+                precio:null,
+            },
+        
+        arr:[]
         }
+        
     },
     template: 
 `
-
 <div>
     <h1 class="pt-4">Velas</h1>
     <section id="cards" class="pt-4">
@@ -85,7 +90,7 @@ Vue.component("productos", {
             <div class="cards-detalle">
                 <h2>{{item.nombre}}</h2>
                 <p>$ {{item.precio}}</p>
-                <button class="btn btn-primary btn-lg">Agregar</button>
+                <button @click="guardar(item)" class="btn btn-primary btn-lg">Agregar</button>
                 <button class="btn btn-outline-dark btn-lg">Ampliar</button>
             </div>
             <div>
@@ -111,6 +116,24 @@ Vue.component("productos", {
                 this.sin_datos = "No hay datos que mostrar"
                 }
                 //console.log( this.$route)
+            },
+
+            //Cuando pulsamos el boton agregar almacenamos la informacion del producto
+            guardar:function(item){
+                //console.log(item)
+                let precio = item.precio
+                //console.log(precio)
+
+                if(!localStorage.item){
+                    arr=[]
+                }else{
+                    arr=JSON.parse(localStorage.getItem("item"))
+                }
+                //arr=JSON.parse(localStorage.getItem("item"))
+                arr.push(item)
+                console.log(arr)
+                localStorage.setItem("item",JSON.stringify(arr))
+
             }
     }
 })

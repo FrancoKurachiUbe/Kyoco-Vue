@@ -24,7 +24,7 @@ Vue.component('form-productos', {
     `
     <section class="container border my-5 row mx-auto">
     <h1 class="col-12 mx-auto text-center ">Cargar Productos</h1>
-      <form @submit.prevent class="col-sm-11 col-md-10 col-lg-8 mx-auto pb-4" >
+      <form class="col-sm-11 col-md-10 col-lg-8 mx-auto pb-4" >
 
             <div  class="form-group">
                 <label for="producto">Nombre del Producto</label>
@@ -83,8 +83,6 @@ Vue.component('form-productos', {
     `,
     methods:{
         guardar:function(dato){
-
-            
 
             if (dato.nombre == null){
                 this.errNom.push('El nombre es obligatorio.');
