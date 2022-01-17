@@ -1,14 +1,17 @@
-/* 
-https://es.vuejs.org/v2/cookbook/client-side-storage.html
-*/
+
 Vue.component("carrito", {
     data:function(){
-		return {
+        return {
             local:[],
             sin_datos: "",
+            /* verdadero:true,
+            item:"",
+            rta:false */
         }
     },
-    template:
+    
+    
+    template: 
     `
     <section>
         <div class="container">
@@ -27,10 +30,15 @@ Vue.component("carrito", {
                         <th>Borrar</th>
                     </tr>
                 </thead>
-                <tbody id="items">
+                <tbody>
                     <tr  v-for="(item, id) in local" class="border">
-                        <td>{{item.precio}}</td>
-                        
+                        <td>{{item.id}}</td>
+                        <td><img :src="item.imagen" :alt="item.descrImg" class="table-img" /></td>
+                        <td class="font-weight-bold">{{item.nombre}}</td>
+                        <td>{{item.descripcion}}</td>
+                        <td>cantidad</td>
+                        <td>$ {{item.precio}}</td>
+                        <td><button @click="borrar(item)" class="btn bg-danger text-light">X</button></td>
                     </tr>
                 </tbody>
                 <tfoot class="borde-BF">
@@ -41,31 +49,24 @@ Vue.component("carrito", {
             </table>
             <button id="productoComprar" class="btn btn-success">Aceptar</button>
         </div> 
-    </section>
+    </section>           
     `,
-    mouted:function(){
-        this.verLocal()
+    mounted:function(){
+        this.ver_local();
     },
     methods:{
-        verLocal:function(){
+        ver_local:function(){
             if(localStorage.item){
-                var dame=JSON.parse(localStorage.getItem("item"))
-                this.local = dame
-                console.log (this.local)
-            }else{
-                this.sin_datos = "No Hay Datos"
+            
+            var dame=JSON.parse(localStorage.getItem("item"))	
+                    this.local = dame
+            } else{ this.sin_datos = "No hay datos que mostrar"
             }
-            console.log(localStorage.dato)
-            console.log(dame)
             console.log(this.local)
-        }
+            //console.log(localStorage.item)
+            //console.log(this.local)
+            //console.log(this.local)
+            //console.log( this.$route)
+        },
     },
 })
-/* 
-<td><img :src="item.imagen" :alt="item.descrImg" class="table-img" /></td>
-<td class="font-weight-bold">{{item.nombre}}</td>
-<td>{{item.descripcion}}</td>
-<td>cantidad</td>
-<td>$ {{item.precio}}</td>
-<td><button @click="borrar(item)" class="btn bg-danger text-light">X</button></td>
-*/

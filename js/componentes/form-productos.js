@@ -2,6 +2,7 @@ Vue.component('form-productos', {
 	data:function(){
 		return {
             dato:{
+                id:null,
                 nombre:null, 
                 descripcion:null,
                 imagen:null, 
@@ -117,7 +118,13 @@ Vue.component('form-productos', {
             
             if(this.errNom.length == 0 && this.errDesImg == 0 && this.errImg == 0 && this.errDes == 0 && this.errPrecio == 0){
                 this.enviar = true;
-
+                
+                if(dato.id === null){
+                    dato.id = 0
+                }else{
+                    dato.id += 1    
+                }
+                console.log(dato.id)
                 if(!localStorage.dato){
                     arr=[]
                 }else{

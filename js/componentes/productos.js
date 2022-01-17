@@ -8,6 +8,7 @@ Vue.component("productos", {
             
             //Capta la informacion del usuario
             item:{
+                id:null,
                 nombre:null, 
                 descripcion:null,
                 imagen:null, 
@@ -95,10 +96,11 @@ Vue.component("productos", {
         </article>
         <article  v-for="(item, id) in local" class="cards shadow-lg">
             <div class="cards-detalle">
+                <span>{{id}}</span>
                 <h2>{{item.nombre}}</h2>
                 <p>$ <span>{{item.precio}}</span></p>
                 
-                <input type="text" v-model="item.precio" class="visually-hidden">
+                <input type="text" v-model="item.id" class="visually-hidden">
                 <button @click="guardar(item)" class="btn btn-primary btn-lg">Agregar</button>
 
                 <button class="btn btn-outline-dark btn-lg">Ampliar</button>
@@ -131,15 +133,21 @@ Vue.component("productos", {
             },
             guardar:function(item){
                 //this.enviar = true;
-                console.log(item)
+                //console.log(item)
                 if(!localStorage.item){
                     arr=[]
                 }else{
                     arr=JSON.parse(localStorage.getItem("item"))
                 }
+                //let id = item.id
                 arr.push(item)
                 console.log(arr)
+                //console.log(id)
+                /* if(arr[id] === ){
+
+                } */
                 localStorage.setItem("item",JSON.stringify(arr))
-            }  
+            }
+             
     },
 })
